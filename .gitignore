@@ -1,0 +1,6 @@
+# node dependency directory
+node_modules
+
+### Emacs ###
+*~
+\#*\#
