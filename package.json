@@ -11,7 +11,7 @@
     "phantomjs" : ">=1.0.0"
   },
   "scripts": {
-    "test": "node_modules.bin/buster-test -r specification"
+    "test": "node_modules/.bin/buster-test -r specification"
   },
   "repository": {
     "type": "git",
