@@ -1,0 +1,28 @@
+{
+  "name": "unit-converter",
+  "version": "0.0.1",
+  "homepage": "https://github.com/bovan/unit-converter",
+  "authors": [
+    "Børge Antonsen <bovan79@gmail.com>"
+  ],
+  "description": "simple unit conversion",
+  "main": "buster.js",
+  "keywords": [
+    "learning",
+    "tdd",
+    "buster",
+    "underscore",
+    "etc"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "underscore": "~1.7.0"
+  }
+}
