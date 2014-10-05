@@ -1,0 +1,29 @@
+{
+  "name": "unit-converter",
+  "version": "0.0.1",
+  "description": "Unit Converter\r =====",
+  "main": "buster.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies" : {
+    "buster" : "~0.6",
+    "phantomjs" : ">=1.0.0"
+  },
+  "scripts": {
+    "test": "node_modules.bin/buster-test -r specification"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bovan/unit-converter.git"
+  },
+  "author": "bovan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bovan/unit-converter/issues"
+  },
+  "engines" : {
+    "node" : "~0.8"
+  },
+  "homepage": "https://github.com/bovan/unit-converter"
+}
