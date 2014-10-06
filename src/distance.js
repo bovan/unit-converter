@@ -25,3 +25,7 @@ bovan.distance.prototype.mile2km = function (mile) {
     var km = mile * this.mile;
     return this.round( km, 3 );
 };
+
+bovan.distance.prototype.time2secs = function (timestring) {
+    return 5;
+};

@@ -39,8 +39,12 @@ buster.testCase("Distance calc", {
 	    assert.equals(10.12, this.d.round(10.123, 2));
 	},
 	"rounding off defaults to 2 digits": function () {
-	    assert.equals(10.12, this.d.round(10.122222));
+            assert.equals(10.12, this.d.round(10.122222));
 	}
-
+    },
+    "time to seconds": {
+	"should calculate 5 seconds to 5": function () {
+            assert.equals(5, this.d.time2secs('5'));
+        }
     }
 });
