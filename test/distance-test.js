@@ -45,6 +45,15 @@ buster.testCase("Distance calc", {
     "time to seconds": {
 	"should calculate 5 seconds to 5": function () {
             assert.equals(5, this.d.time2secs('5'));
+        },
+        "should calculate 10 seconds to 10": function () {
+            assert.equals(10, this.d.time2secs('10'));
+        },
+        "should calculate 1:10 to 70 seconds": function () {
+            assert.equals(70, this.d.time2secs('1:10'));
+        },
+        "should calculate 5:40 to 340": function () {
+            assert.equals(340, this.d.time2secs('5:40'));
         }
     }
 });
