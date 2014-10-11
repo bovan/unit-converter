@@ -54,6 +54,21 @@ buster.testCase("Distance calc", {
         },
         "should calculate 5:40 to 340": function () {
             assert.equals(340, this.d.time2secs('5:40'));
+        },
+        "should assert 1:30:00 and 90:00 to 5400": function () {
+            assert.equals(5400, this.d.time2secs('1:30:00'));
+            assert.equals(5400, this.d.time2secs('90:00'));
+        },
+        "error handling": {
+	    "should return 0 for string a": function () {
+                assert.equals(0, this.d.time2secs('a'));
+            },
+            "should return 0 for empty input": function () {
+                assert.equals(0, this.d.time2secs());
+            },
+            "should return 0 for empty string input": function () {
+                assert.equals(0, this.d.time2secs(''));
+            }
         }
     }
 });

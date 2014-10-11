@@ -27,21 +27,23 @@ bovan.distance.prototype.mile2km = function (mile) {
 };
 
 bovan.distance.prototype.time2secs = function (timestring) {
-    var parts = timestring.split(':');
-    var secs = 0;
-    var multiplier = 0;
-    var toAdd = 0;
 
-    for (var i = parts.length - 1, l = 0; i >= l; i--) {
-        toAdd = parseInt(parts[i], 10);
-        if (multiplier !== 0) {
-            secs += toAdd * multiplier;
-        }
-        else {
-            secs += toAdd;
-            multiplier = 60;
-        };
-   
+    if (!timestring) {
+        return 0;
+    }
+
+    var parts = timestring.split(':'),
+        secs = 0,
+        multiplier = 1;
+
+    while( parts.length > 0) {
+        secs += multiplier * parseInt(parts.pop(), 10);
+        multiplier *= 60;   
+    }
+    
+    // NaN check
+    if (secs !== secs) {
+        return 0;
     }
     return secs;
 };
