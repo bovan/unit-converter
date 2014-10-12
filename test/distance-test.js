@@ -60,6 +60,7 @@ buster.testCase("Distance calc", {
             assert.equals(5400, this.d.time2secs('90:00'));
         },
         "error handling": {
+            // lets make it simple and return 0 seconds
 	    "should return 0 for string a": function () {
                 assert.equals(0, this.d.time2secs('a'));
             },
@@ -70,5 +71,46 @@ buster.testCase("Distance calc", {
                 assert.equals(0, this.d.time2secs(''));
             }
         }
+    },
+    "seconds to timestring": {
+	"should convert 5 to string 5": function () {
+            assert.equals('5', this.d.secs2time(5));
+        },
+	"should convert 10 to string 10": function () {
+            assert.equals('10', this.d.secs2time(10));
+        },
+	"should convert 65 to string 1:05": function () {
+            assert.equals('1:05', this.d.secs2time(65));
+        }
+    },
+    "zero padding numbers": {
+	"should zero pad 5 to 05": function () {
+            assert.equals('05', this.d.zeropad(5));
+        },
+        "should not zero pad 10 to 010": function () {
+            refute.equals('010', this.d.zeropad(10));
+            assert.equals('10', this.d.zeropad(10));
+        },
+        "should zero pad string 9 to 09": function () {
+            assert.equals('09', this.d.zeropad('09'));
+        },
+        "should leave 120 alone": function () {
+            assert.equals('120', this.d.zeropad('120'));
+        }
+    },
+    "pace conversions": {
+	"should convert 9:41 min/mile to 6:01 min/km": function () {
+            assert.equals('6:00', this.d.pace2km('9:39'));
+        },
+        "should convert 8:03 min/mile to 5:00 min/km": function () {
+            assert.equals('5:00', this.d.pace2km('8:02'));
+        },
+        "should convert 10:00 min/mile to 6:12 min/km": function () {
+            assert.equals('6:13', this.d.pace2km('10:00'));
+        },
+        "should convert 11:11 min/mile to 6:56 min/km": function () {
+            assert.equals('6:57', this.d.pace2km('11:11'));
+        },
+        
     }
 });
